@@ -1,4 +1,3 @@
-```markdown
 # 🚀 Socket.IO Video Chat Server
 
 Welcome to the Socket.IO Video Chat Server! This server facilitates real-time video communication using Socket.IO for seamless, peer-to-peer connections. Let's dive into the details:
@@ -136,4 +135,4 @@ Understanding these principles enhances the comprehension of the Socket.IO Video
 Feel free to contribute and enhance this video chat server. Create issues, submit pull requests, and let's make this project even more awesome together!
 
 Happy coding! 🚀👩‍💻👨‍💻
-```
+
