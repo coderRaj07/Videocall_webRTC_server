@@ -1,9 +1,10 @@
 const { Server } = require("socket.io");
 
-// Use the correct URL assigned by Railway in production, or use port 8000 locally
-const serverUrl = process.env.NODE_ENV === "production"
-  ? "https://videocallwebrtcserver-production.up.railway.app"
-  : "http://localhost:8000";
+// URL assigned by Railway in production
+const serverUrl = "https://videocallwebrtcserver-production.up.railway.app"
+// for local deployment 
+// const serverUrl = 8000;
+
 
 const io = new Server(serverUrl, {
   cors: true,
