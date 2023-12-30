@@ -1,17 +1,8 @@
 const { Server } = require("socket.io");
 
-// URL assigned by Railway in production
-const serverUrl = "https://videocallwebrtcserver-production.up.railway.app"
-// for local deployment 
-// const serverUrl = 8000;
-
-const io = new Server(serverUrl, {
-  cors: {
-    origin: [serverUrl],
-    methods: ["GET", "POST"]
-  },
+const io = new Server(8000, {
+  cors: true,
 });
-
 
 const emailToSocketIdMap = new Map();
 const socketidToEmailMap = new Map();
