@@ -5,9 +5,11 @@ const serverUrl = "https://videocallwebrtcserver-production.up.railway.app"
 // for local deployment 
 // const serverUrl = 8000;
 
-
 const io = new Server(serverUrl, {
-  cors: true,
+  cors: {
+    origin: [serverUrl],
+    methods: ["GET", "POST"]
+  },
 });
 
 
