@@ -1,12 +1,15 @@
+const express = require("express");
+const http = require("http");
 const { Server } = require("socket.io");
 
-const io = new Server(8000, {
+const app = express();
+const server = http.createServer(app);
+const io = new Server(server, {
   cors: true,
 });
 
 const emailToSocketIdMap = new Map();
 const socketidToEmailMap = new Map();
-
 
 io.on("connection", (socket) => {
   console.log(`Socket Connected`, socket.id);
@@ -36,4 +39,10 @@ io.on("connection", (socket) => {
     console.log("peer:nego:done", ans);
     io.to(to).emit("peer:nego:final", { from: socket.id, ans });
   });
+});
+
+const PORT = process.env.PORT || 8000;
+
+server.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
